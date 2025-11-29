@@ -1,12 +1,13 @@
 "use server"
 
 import { currentUser } from "@clerk/nextjs/server";
-import { prisma } from "../prisma";
+import prisma from "../prisma";
+
 
 export async function syncUser() {
     try {
         const user = await currentUser();
-        if(!user) return null
+        if(!user) return
 
      const existingUser = await prisma.user.findUnique({where:{clerkId: user.id}})
      if(existingUser) return existingUser
