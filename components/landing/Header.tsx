@@ -1,5 +1,5 @@
 import React from 'react'
-import { SignInButton, SignUpButton } from "@clerk/nextjs";
+import { SignInButton, SignOutButton, SignUpButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
@@ -34,7 +34,7 @@ function Header() {
           <SignUpButton mode="modal">
             <Button size={"sm"}>Sign Up</Button>
           </SignUpButton>
-        </div>
+    </div>
       </div>
     </nav>
   );
